@@ -1,3 +1,5 @@
+@import 'bower_components/bourbon/app/assets/stylesheets/bourbon';
+@import 'bower_components/neat/app/assets/stylesheets/neat';
 @import 'base/normalize';
 
 @import 'helpers/colors';
@@ -7,15 +9,14 @@
 @import 'helpers/base';
 @import 'helpers/buttons';
 
-@import 'layout/headers/masthead/masthead';
-@import 'layout/headers/banner/banner';
-@import 'layout/headers/banner/nav-bar';
-@import 'layout/footers/basic';
-@import 'layout/footers/newsapps';
-@import 'layout/components/social-media/share-buttons';
-@import 'layout/components/social-media/sharelines';
-@import 'layout/components/about';
-@import 'layout/components/tables';
+// @import 'layout/headers/masthead/masthead';
+// @import 'layout/headers/banner/banner';
+// @import 'layout/headers/banner/nav-bar';
+// @import 'layout/footers/basic';
+// @import 'layout/footers/newsapps';
+// @import 'layout/components/social-media/share-buttons';
+// @import 'layout/components/social-media/sharelines';
+// @import 'layout/components/about';
+// @import 'layout/components/tables';
 
 @import 'theme/prose';
-@import 'theme/style-guide';

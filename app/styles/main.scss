@@ -31,8 +31,9 @@
 }
 
 .large-donors {
-  @extend %font-m;
+  @extend %font-base;
   font-style: italic;
+  margin: 0;
 
   li {
     margin-bottom: 1em;

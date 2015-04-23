@@ -30,26 +30,20 @@ gulp.task('styles', function() {
       sourcemap: true
     })
     .on('error', console.error.bind(console))
-    .pipe($.autoprefixer({
-      browsers: ['last 2 versions', 'IE 9', 'IE 8'],
-      cascade: false
-    }))
+    // .pipe($.autoprefixer({
+    //   browsers: ['last 2 versions', 'IE 9', 'IE 8'],
+    //   cascade: false
+    // }))
     .pipe($.sourcemaps.write('.'))
     .pipe(gulp.dest('.tmp/styles'))
     .pipe($.size({title: 'styles'}));
 });
 
 gulp.task('templates', function() {
-  var data = JSON.parse(fs.readFileSync('data.json', 'utf8'));
-  var packageData = JSON.parse(fs.readFileSync('package.json', 'utf8'));
-
-  // pulls over the bucket and slug data for the preview page
-  data.INTERNAL = packageData.config;
 
   $.nunjucks.nunjucks.configure(['app/']);
 
   return gulp.src(['app/**/*.html', '!app/includes/*'])
-    .pipe($.nunjucks(data))
     .pipe(gulp.dest('.tmp'));
 });
 

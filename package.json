@@ -2,7 +2,7 @@
   "private": true,
   "config": {
     "s3_bucket": "graphics.texastribune.org",
-    "slug": ""
+    "slug": "donor-wall"
   },
   "devDependencies": {
     "browser-sync": "^2.0.0-rc10",

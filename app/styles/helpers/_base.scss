@@ -1,0 +1,75 @@
+/* Base Theme for HTML elements */
+
+body {
+  background-color: $white;
+  font-family: $base-sans-serif;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1;
+  text-rendering: optimizelegibility;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 400;
+}
+
+p {
+  @extend %font-base;
+  font-family: $base-serif;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+a {
+  color: $href-teal;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+
+  &.bullet {
+    font-family: $base-sans-serif;
+    font-weight: 600;
+    list-style: disc;
+    padding: 0 1em;
+
+    li {
+      margin-bottom: .5em;
+
+      &:last-child {
+        margin-bottom: 1em;
+      }
+    }
+
+  }
+}
+
+hr {
+  background-color: $line-gray;
+  border: 0 none;
+  height: 2px;
+  margin-bottom: 2em;
+
+  &.thin {
+    height: 1px;
+  }
+
+  &.yellow {
+    background-color: $tribune-yellow;
+  }
+}
+
+
+.container {
+  @include clearfix;
+}

@@ -1,0 +1,40 @@
+@import 'initialize';
+
+.member-group {
+  h2 {
+    @extend %font-l;
+  }
+
+  div {
+    background-color: $background-gray;
+    padding: 1em;
+  }
+
+  span {
+    color: $text-gray;
+    line-height: 1.4;
+
+    &:after {
+     content: " | ";
+    }
+
+    &:last-child {
+      &:after {
+        content: "";
+      }
+    }
+
+    &:hover {
+      color: $bodytext-black;
+    }
+  }
+}
+
+.large-donors {
+  @extend %font-m;
+  font-style: italic;
+
+  li {
+    margin-bottom: 1em;
+  }
+}

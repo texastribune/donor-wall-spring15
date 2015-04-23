@@ -1,0 +1,17 @@
+$bp-guide: new-breakpoint(min-width 600px);
+
+//Style Guide stylez
+pre {
+  @include fill-parent();
+  display: none;
+}
+
+// #side-nav {
+//   @include media($bp-guide) {
+//     @include span-columns(4);
+//   }
+// }
+
+.banner {
+  height: 16em;
+}

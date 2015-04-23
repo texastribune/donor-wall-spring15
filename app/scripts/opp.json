@@ -1,0 +1,13 @@
+{"done": true, "totalSize": 2, "records": [
+  {"Account_Informal_Greeting__c": "Mr Snow And Sleepy",
+  "Amount": 100.0,
+  "Attribution__c": "in honor of Sleepy White",
+  "attributes": {"type": "Opportunity", "url": "/services/data/v33.0/sobjects/Opportunity/0061600000gXbELAA0"}
+  },
+  {"Account_Informal_Greeting__c": "Jo Kathryn Quinn",
+  "Amount": 100.0,
+  "Attribution__c": "Foobarbaz!",
+  "attributes": {"type": "Opportunity", "url": "/services/data/v33.0/sobjects/Opportunity/0061600000heLNRAA2"}
+  }
+]}
+

@@ -2,7 +2,6 @@
 
 echo "S3 BUCKET: "${npm_package_config_s3_bucket:?"The S3 bucket needs to be set in the package.json"}
 echo "PROJECT SLUG: "${npm_package_config_slug:?"The project's slug needs to be set in the package.json"}
-echo
 
 export GRAPHIC_S3_BUCKET=$npm_package_config_s3_bucket
 export PROJECT_SLUG=$npm_package_config_slug

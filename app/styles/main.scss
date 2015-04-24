@@ -3,11 +3,16 @@
 .member-group {
   h2 {
     @extend %font-m;
+    margin: 0 0 .5em;
   }
 
   div {
     background-color: $background-gray;
     padding: 1em;
+
+    &:last-child {
+      margin-bottom: 2em;
+    }
   }
 
   span {
@@ -35,7 +40,16 @@
   font-style: italic;
   margin: 0;
 
-  li {
-    margin-bottom: 1em;
+  div {
+    padding: 0 1em;
+
+    &:last-child {
+      padding-bottom: 2em;
+    }
+  }
+
+  h3 {
+    margin: 0 0 .5em;
+    padding-top: 1em;
   }
 }

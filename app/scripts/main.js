@@ -35,7 +35,7 @@
       $.each(amounts, function( index, value ) {
 
         if ( value >= 1000 ) {
-          $('<div class="' + value + '"><header><h2>$' + numberWithCommas(value) + '</h2></header></div>').appendTo('.large-donors');
+          $('<div class="' + value + '"><header><h3>$' + numberWithCommas(value) + '</h3></header></div>').appendTo('.large-donors');
         }
       });
     }

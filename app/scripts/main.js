@@ -10,8 +10,8 @@
     var data = [];
     var amounts = [];
     //Load JSON data from Google Spreadsheet
-    // $.getJSON('http://graphics.texastribune.org/graphics/donor-wall/account.json', function(json) {
-    $.getJSON('/scripts/account.json', function(json) {
+    $.getJSON('http://graphics.texastribune.org/graphics/donor-wall/account.json', function(json) {
+    // $.getJSON('/scripts/account.json', function(json) {
       data = json;
     }).done( function() {
       getAmounts(data);

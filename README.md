@@ -6,6 +6,7 @@ Built w/ News Apps' graphic kit. To install, clone repo and run:
 
 ```
 npm install && bower install
+bower install jquery
 ```
 
 For more commands, see [graphic kit](https://github.com/texastribune/newsapps-graphic-kit).

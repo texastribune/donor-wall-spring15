@@ -10,21 +10,37 @@
     var data = [];
     var amounts = [];
     //Load JSON data from Google Spreadsheet
-    $.getJSON('http://graphics.texastribune.org/graphics/donor-wall/account.json', function(json) {
-    // $.getJSON('/scripts/account.json', function(json) {
+    $.getJSON('//membership.texastribune.org.s3.amazonaws.com/donors.json', function(json) {
+    // $.getJSON('/scripts/donors.json', function(json) {
       data = json;
     }).done( function() {
+      sortData(data);
       getAmounts(data);
       build(data);
     });
+
+    function sortData(data) {
+      data.sort(function (a, b) {
+        if (a.amount > b.amount) {
+          return 1;
+        }
+        if (a.amount < b.amount) {
+          return -1;
+        }
+        // a must be equal to b
+        return 0;
+      });
+      return data.reverse();
+      console.log(data);
+    }
 
     function numberWithCommas(x) {
       return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
     }
 
     function getAmounts(data) {
-      for (var i = 0; i < data.records.length; i++) {
-        var amount = data.records[i].Total_Donor_Wall_This_Year__c;
+      for (var i = 0; i < data.length; i++) {
+        var amount = data[i].amount;
         amounts.push(amount);
       }
 
@@ -41,10 +57,9 @@
     }
 
     function build(data) {
-      for (var i = 0; i < data.records.length; i++) {
-        var record = data.records[i];
-        var name = '<span>' + record.Name + '</span>';
-        var amount = record.Total_Donor_Wall_This_Year__c;
+      for (var i = 0; i < data.length; i++) {
+        var name = '<span>' + data[i].attribution + '</span>';
+        var amount = data[i].amount;
 
         if (amount <= 10) {
           $(name).appendTo('.student');
@@ -58,9 +73,10 @@
           $(name).appendTo('.diplomat');
         } else if (amount <= 500 ) {
           $(name).appendTo('.benefactor');
+        } else if (amount < 1000 ) {
+          $(name).appendTo('.large');
         } else {
           var className = amount.toString();
-          console.log(className);
           $('.' + className).append(name);
         }
       }

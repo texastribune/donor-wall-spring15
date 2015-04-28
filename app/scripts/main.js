@@ -11,7 +11,6 @@
     var amounts = [];
     //Load JSON data from Google Spreadsheet
     $.getJSON('//membership.texastribune.org.s3.amazonaws.com/donors.json', function(json) {
-    // $.getJSON('/scripts/donors.json', function(json) {
       data = json;
     }).done( function() {
       sortData(data);

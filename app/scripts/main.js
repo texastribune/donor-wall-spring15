@@ -6,7 +6,6 @@
   var pymChild;
 
   function render() {
-
     var data = [];
     var amounts = [];
     //Load JSON data from Google Spreadsheet
@@ -16,6 +15,7 @@
       sortData(data);
       getAmounts(data);
       build(data);
+      pymChild.sendHeight();
     });
 
     function sortData(data) {
@@ -30,7 +30,6 @@
         return 0;
       });
       return data.reverse();
-      console.log(data);
     }
 
     function numberWithCommas(x) {
@@ -80,10 +79,6 @@
         }
       }
     }
-
-    if (pymChild) {
-      pymChild.sendHeight();
-    }
   }
 
   function load() {
@@ -91,6 +86,9 @@
       renderCallback: render
     });
   }
+
+  $(document).ready(function(){
+  });
 
   window.onload = load;
 })();

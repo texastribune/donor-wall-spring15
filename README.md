@@ -6,7 +6,22 @@ Built w/ News Apps' graphic kit. To install, clone repo and run:
 
 ```
 npm install && bower install
-bower install jquery
+npm install jquery
 ```
+
+To test locally, run:
+
+```
+gulp serve
+```
+
+To build and deploy, run:
+
+```
+gulp
+npm run deploy
+```
+
+The package will deploy to graphics.texastribune.org/donor-wall. To change the location, update the package.json file.
 
 For more commands, see [graphic kit](https://github.com/texastribune/newsapps-graphic-kit).

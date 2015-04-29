@@ -7,8 +7,6 @@
   }
 
   div {
-    background-color: $background-gray;
-    padding: 1em;
 
     &:last-child {
       margin-bottom: 2em;
@@ -35,17 +33,12 @@
   }
 }
 
-.large-donors {
+.donors {
   @extend %font-base;
-  font-style: italic;
   margin: 0;
 
   div {
-    padding: 0 1em;
-
-    &:last-child {
-      padding-bottom: 2em;
-    }
+    margin-bottom: .8em;
   }
 
   h3 {
@@ -54,6 +47,11 @@
   }
 }
 
+.student {
+  h3 {
+    padding-top: 0;
+  }
+}
 .clear {
   margin-bottom: 1em;
 }

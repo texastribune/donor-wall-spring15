@@ -15,7 +15,15 @@ To test locally, run:
 gulp serve
 ```
 
-To build and deploy, run:
+To deploy to Tribune's S3 account, you'll need to add a [profile newsapps] to ~/.aws/config. It should look something like this:
+
+```
+[profile newsapps]
+aws_access_key_id=YOUR_UNIQUE_ID
+aws_secret_access_key=YOUR_SECRET_ACCESS_KEY
+```
+
+Then you can run these commands to build and deploy:
 
 ```
 gulp

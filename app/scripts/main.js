@@ -4,6 +4,16 @@
   var pymChild;
 
   function render() {
+
+  }
+
+  function load() {
+    pymChild = new pym.Child({
+      renderCallback: render
+    });
+  }
+
+  $(document).ready(function(){
     var data = [];
     var amounts = [];
     //Load JSON data from Google Spreadsheet
@@ -65,15 +75,6 @@
         }
       }
     }
-  }
-
-  function load() {
-    pymChild = new pym.Child({
-      renderCallback: render
-    });
-  }
-
-  $(document).ready(function(){
   });
 
   window.onload = load;

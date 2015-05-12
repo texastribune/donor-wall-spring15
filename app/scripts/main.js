@@ -15,62 +15,32 @@
 
   $(document).ready(function(){
     var data = [];
-    var amounts = [];
     //Load JSON data from Google Spreadsheet
-    $.getJSON('//membership.texastribune.org.s3.amazonaws.com/donors.json', function(json) {
+    $.getJSON('//membership.texastribune.org.s3.amazonaws.com/foo.json', function(json) {
       data = json;
     }).done( function() {
-      sortData(data);
-      getAmounts(data);
       build(data);
       pymChild.sendHeight();
     });
 
-    function sortData(data) {
-      data.sort(function (a, b) {
-        if (a.amount > b.amount) {
-          return 1;
-        }
-        if (a.amount < b.amount) {
-          return -1;
-        }
-        // a must be equal to b
-        return 0;
-      });
-      return data.reverse();
-    }
-
-    function numberWithCommas(x) {
-      return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-    }
-
-    function getAmounts(data) {
-      for (var i = 0; i < data.length; i++) {
-        var amount = data[i].amount;
-        amounts.push(amount);
-      }
-
-      // var maxDonation = Math.max.apply(null, amounts);
-      // console.log(maxDonation);
-      amounts = $.unique(amounts);
-
-      $.each(amounts, function( index, value ) {
-
-        if ( value > 10 ) {
-          $('<div class="' + value + '"><header><h3>$' + numberWithCommas(value) + '</h3></header></div>').appendTo('.donors');
-        }
-      });
+    function numberWithoutCommas(x) {
+      return x.toString().replace(',', '');
     }
 
     function build(data) {
-      for (var i = 0; i < data.length; i++) {
-        var name = '<span>' + data[i].attribution + '</span>';
-        var amount = data[i].amount;
+      for (var key in data) {
+        var value = data[key];
+        var className = '';
 
-        if (amount <= 10) {
-          $(name).appendTo('.student');
+        if ( key == 'Less than $10') {
+          className = 'less-than'
         } else {
-          var className = amount.toString();
+          className = numberWithoutCommas(key).substring(1);
+        }
+
+        $('<div class="' + className + '"><header><h3>' + key + '</h3></header></div>').appendTo('.donors');
+        for (var i = 0; i < value.length; i++) {
+          var name = '<span>' + value[i].attribution + '</span>';
           $('.' + className).append(name);
         }
       }

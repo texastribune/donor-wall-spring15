@@ -16,7 +16,7 @@
   $(document).ready(function(){
     var data = [];
     //Load JSON data from Google Spreadsheet
-    $.getJSON('//membership.texastribune.org.s3.amazonaws.com/foo.json', function(json) {
+    $.getJSON('//membership.texastribune.org.s3.amazonaws.com/donors-2015.json', function(json) {
       data = json;
     }).done( function() {
       build(data);

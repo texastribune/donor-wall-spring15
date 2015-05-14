@@ -16,7 +16,7 @@
   $(document).ready(function(){
     var data = [];
     //Load JSON data from Google Spreadsheet
-    $.getJSON('//membership.texastribune.org.s3.amazonaws.com/donors-2015.json', function(json) {
+    $.getJSON('//membership.texastribune.org.s3.amazonaws.com/donors-alltime.json', function(json) {
       data = json;
     }).done( function() {
       build(data);
@@ -24,7 +24,7 @@
     });
 
     function numberWithoutCommas(x) {
-      return x.toString().replace(',', '');
+      return x.toString().replace(/,/g , '');
     }
 
     function build(data) {

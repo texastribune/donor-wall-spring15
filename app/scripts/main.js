@@ -24,7 +24,7 @@
     });
 
     function numberWithoutCommas(x) {
-      return x.toString().replace(',', '');
+      return x.toString().replace(/,/g , '');
     }
 
     function build(data) {
